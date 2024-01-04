@@ -1,0 +1,17 @@
+h1{
+  color: aqua;
+}
+
+.container{
+  outline: solid red;
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-wrap:wrap;
+}
+
+.card{
+  height: 25px;
+  width: 25px;
+  outline: solid yellow;
+}
