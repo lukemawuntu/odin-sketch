@@ -14,13 +14,15 @@ function createGrid(){
 function randomInteger(){
   return Math.floor(Math.random(0,7)*10)
 }
+function toggleRainbow(){
+  const rainbow = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
+  return rainbow[randomInteger()]
+}
 function colorGrid(){
   const gridElements = document.querySelectorAll('.grid');
-  const rainbow = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
   gridElements.forEach((gridElement) => {
     gridElement.addEventListener('mouseover', () => {
-      gridElement.style.backgroundColor = `${rainbow[randomInteger()
-      ]}`;
+      gridElement.style.backgroundColor = `${toggleRainbow()}`;
     });
   });
 }
