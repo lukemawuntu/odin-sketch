@@ -4,8 +4,9 @@ let isRainbow = false;
 let isBlack = false;
 
 function createGrid(){
+  const container=document.querySelector('.container');
+  container.innerHTML ='';
   for (let i = 0; i <gridSize ; i++) {
-    const container=document.querySelector('.container');
     const gridDiv = document.createElement('div')
     gridDiv.classList.add('grid');
     gridDiv.style.cssText=`height: ${400/getGridSize}px; width: ${400/getGridSize}px`;
