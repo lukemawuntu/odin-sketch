@@ -1,5 +1,7 @@
 let getGridSize = 0;
 let gridSize = 0;
+let isRainbow = false;
+let isBlack = false;
 
 function createGrid(){
   for (let i = 0; i <gridSize ; i++) {
@@ -14,15 +16,36 @@ function createGrid(){
 function randomInteger(){
   return Math.floor(Math.random(0,7)*10)
 }
+
 function toggleRainbow(){
   const rainbow = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
   return rainbow[randomInteger()]
 }
+
+function toggleBlack(){
+  return 'black';
+}
+
+const rainbow = document.querySelector("#rainbow")
+rainbow.addEventListener('click',()=>{
+  isRainbow = true;
+})
+
+const black = document.querySelector("#black")
+black.addEventListener('click',()=>{
+  isBlack = true;
+})
+
 function colorGrid(){
   const gridElements = document.querySelectorAll('.grid');
   gridElements.forEach((gridElement) => {
     gridElement.addEventListener('mouseover', () => {
-      gridElement.style.backgroundColor = `${toggleRainbow()}`;
+      if (isRainbow==true) {
+        gridElement.style.backgroundColor = `${toggleRainbow()}`;
+      };
+      if (isBlack==true) {
+        gridElement.style.backgroundColor = `${toggleBlack()}`;
+      };
     });
   });
 }
