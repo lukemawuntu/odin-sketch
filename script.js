@@ -12,7 +12,7 @@ for (let i = 0; i <gridSize ; i++) {
 const gridElements = document.querySelectorAll('.grid');
 gridElements.forEach((gridElement)=>{
   gridElement.addEventListener('mouseover',(e)=>{
-    console.log(e.target);
+    gridElement.style.backgroundColor ='yellow';
   });
 });
 
