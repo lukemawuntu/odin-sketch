@@ -1,3 +1,7 @@
+//fix issue with forEach typeError
+//add shading function
+//add style
+
 const changeSize = document.querySelector('#changeSize');
 const black = document.querySelector('#black');
 const rainbow = document.querySelector('#rainbow');
@@ -30,53 +34,12 @@ function start() {
   toggleRainbow(gridElements);
 }
 
-<<<<<<< HEAD
-function changeSize(){
-  getGridSize=+prompt("input grid size","16");
-  gridSize = getGridSize*getGridSize;
-}
-
-const btnChangeSize = document.querySelector('#changeSize');
-btnChangeSize.addEventListener('click', ()=>{
-  changeSize();
-  createGrid();
-  const gridElements = document.querySelectorAll('.grid');
-  gridElements.forEach((gridElement) => {
-    gridElement.addEventListener('mouseover', () => {
-      gridElement.style.backgroundColor = 'black';
-    });
-  });
-});
-
-const rainbow = document.querySelector("#rainbow");
-rainbow.addEventListener('click', ()=>{
-  changeSize();
-  createGrid();
-  const rainbowColors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
-  const gridElements = document.querySelectorAll('.grid');
-  gridElements.forEach((gridElement) => {
-    gridElement.addEventListener('mouseover', () => {
-      gridElement.style.backgroundColor = `${rainbowColors[randomInteger()]}`;
-    });
-  });
-});
-
-const black = document.querySelector("#black");
-black.addEventListener('click', ()=>{
-  changeSize();
-  createGrid();
-  const gridElements = document.querySelectorAll('.grid');
-  gridElements.forEach((gridElement) => {
-    gridElement.addEventListener('mouseover', () => {
-      gridElement.style.backgroundColor = 'black';
-=======
 function toggleBlack(elements) {
   black.addEventListener('click', () => {
     elements.forEach((gridElement) => {
       gridElement.addEventListener('mouseover', () => {
         gridElement.style.backgroundColor = 'black';
       });
->>>>>>> old-sketch
     });
   });
 }
