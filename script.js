@@ -1,3 +1,16 @@
+
+const changeSize = document.querySelector('#changeSize')
+changeSize.addEventListener('click',()=>{
+  const container=document.querySelector('.container');
+  container.innerHTML='';
+  for (let i = 0; i <gridSize ; i++) {
+    const gridDiv = document.createElement('div')
+    gridDiv.classList.add('grid');
+    gridDiv.style.cssText=`height: ${400/getGridSize}px; width: ${400/getGridSize}px`;
+    container.appendChild(gridDiv);
+  };
+});
+
 let getGridSize = +prompt('Choose gridsize', '16')
 
 const gridSize = getGridSize*getGridSize
