@@ -24,7 +24,16 @@ function changeSize(){
 }
 
 const btnChangeSize = document.querySelector('#changeSize');
-btnChangeSize.addEventListener('click',changeSize);
+btnChangeSize.addEventListener('click', ()=>{
+  changeSize();
+  createGrid();
+  const gridElements = document.querySelectorAll('.grid');
+  gridElements.forEach((gridElement) => {
+    gridElement.addEventListener('mouseover', () => {
+      gridElement.style.backgroundColor = 'black';
+    });
+  });
+});
 
 const rainbow = document.querySelector("#rainbow");
 rainbow.addEventListener('click', ()=>{
@@ -32,10 +41,10 @@ rainbow.addEventListener('click', ()=>{
   createGrid();
   const rainbowColors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
   const gridElements = document.querySelectorAll('.grid');
-      gridElements.forEach((gridElement) => {
-        gridElement.addEventListener('mouseover', () => {
-          gridElement.style.backgroundColor = `${rainbowColors[randomInteger()]}`;
-        });
+  gridElements.forEach((gridElement) => {
+    gridElement.addEventListener('mouseover', () => {
+      gridElement.style.backgroundColor = `${rainbowColors[randomInteger()]}`;
+    });
   });
 });
 
